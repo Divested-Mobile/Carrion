@@ -16,12 +16,22 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 package us.spotco.carrion;
 
+import android.app.KeyguardManager;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.telecom.Call;
 import android.telecom.CallScreeningService;
 import android.telecom.Connection;
 import android.util.Log;
+import android.widget.Toast;
+
+import java.util.Random;
 
 public class ScreeningService extends CallScreeningService {
+    private NotificationManager notificationManager = null;
+    
     @Override
     public void onScreenCall(Call.Details details) {
         boolean isIncoming = details.getCallDirection() == Call.Details.DIRECTION_INCOMING;
@@ -30,19 +40,20 @@ public class ScreeningService extends CallScreeningService {
             Log.d("Carrion", "Verification " + details.getCallerNumberVerificationStatus());
             switch (details.getCallerNumberVerificationStatus()) {
                 case Connection.VERIFICATION_STATUS_FAILED:
+                    sendNotification(getString(R.string.lblRejectedCall), getString(R.string.lblStatusVerifyFailed));
                     callReject(details);
                     break;
                 case Connection.VERIFICATION_STATUS_PASSED:
+                    //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifySuccess));
                     callAllow(details);
                     break;
                 default:
-                    // Network could not perform verification.
-                    // This branch matches Connection.VERIFICATION_STATUS_NOT_VERIFIED
-                    //Add control of this case;
+                    sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifyUnknown));
                     callAllow(details);
                     break;
             }
         } else {
+            //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusExcluded));
             callAllow(details);
         }
     }
@@ -63,5 +74,36 @@ public class ScreeningService extends CallScreeningService {
     public void callAllow(Call.Details details) {
         Log.d("Carrion", "Allowing call");
         respondToCall(details, new CallResponse.Builder().build());
+    }
+
+    public void sendNotification(String title, String content){
+        //Log.d("Carrion", "Trying to notify: " + title + ", " + content);
+        if(isDeviceLocked()) {
+            if(notificationManager == null) {
+                notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                NotificationChannel alertChannel = new NotificationChannel("CallScreeningAlerts", getString(R.string.lblNotificationAlertTitle), NotificationManager.IMPORTANCE_HIGH);
+                alertChannel.setDescription(getString(R.string.lblNotificationAlertDescription));
+                notificationManager.createNotificationChannel(alertChannel);
+            }
+
+            int notificationId = new Random().nextInt();
+            Notification.Builder mBuilder =
+                    new Notification.Builder(getApplicationContext())
+                            .setSmallIcon(R.drawable.ic_launcher_foreground)
+                            .setContentTitle(title)
+                            .setContentText(content)
+                            .setShowWhen(true)
+                            .setPriority(Notification.PRIORITY_HIGH)
+                            .setVisibility(Notification.VISIBILITY_PUBLIC)
+                            .setChannelId("CallScreeningAlerts");
+            notificationManager.notify(notificationId, mBuilder.build());
+        } else {
+            Toast.makeText(this, title + "\n" + content, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private boolean isDeviceLocked() {
+        KeyguardManager keyguardManager = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+        return keyguardManager.isDeviceLocked();
     }
 }

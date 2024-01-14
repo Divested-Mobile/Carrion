@@ -10,8 +10,8 @@ android {
         applicationId "us.spotco.carrion"
         minSdk 30
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        versionCode 101
+        versionName "1.01"
     }
 
     buildTypes {
