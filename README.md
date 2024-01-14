@@ -16,6 +16,7 @@ Usage
 
 Requirements
 ------------
+- VoLTE must be working
 - Your device must have official support for Android 11 or higher
 - If seemingly all received calls are unknown state, your device/carrier is likely incompatible
 
