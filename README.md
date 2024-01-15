@@ -7,9 +7,18 @@ Automatically rejects all calls failing STIR/SHAKEN verification.
      alt="Get it on F-Droid"
      height="80">](https://f-droid.org/packages/us.spotco.carrion/)
 
+What?
+-----
+- Ever receieve a spam call and try to call it back, only for it to be out of service or some stranger? This blocks that.
+- STIR/SHAKEN provides cryptographic attestation of caller ID and is mandated by law in USA and Canada
+- https://www.fcc.gov/call-authentication
+- https://en.wikipedia.org/wiki/STIR/SHAKEN
+- https://fccprod.servicenowservices.com/rmd?id=rmd_listings
+
 Usage
 -----
-- A call that failed verification will be rejected and a failure notification shown
+- Install the app, grant the screening perission, nothing more!
+- A call that failed verification will be disallowed and a failure notification shown
 - A call that is unknown will be allowed and a notification shown
 - A call that is verified will be allowed without any notification
 - Calls from contacts or emergency numbers are always allowed
