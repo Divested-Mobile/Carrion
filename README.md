@@ -20,6 +20,14 @@ Requirements
 - Your device must have official support for Android 11 or higher
 - If seemingly all received calls are unknown state, your device/carrier is likely incompatible
 
+Device Compatibility
+--------------------
+- The below is not a guarantee, just a minimum requirement
+- Pixel 4 and newer
+- OnePlus 5 and newer
+- Fairphone 3 and newer
+- F(x)tec Pro¹ X
+
 Known Issues
 ------------
 - May fail to ask for screening permission, close the app and open until it prompts

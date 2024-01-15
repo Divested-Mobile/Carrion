@@ -40,8 +40,8 @@ public class ScreeningService extends CallScreeningService {
             Log.d("Carrion", "Verification " + details.getCallerNumberVerificationStatus());
             switch (details.getCallerNumberVerificationStatus()) {
                 case Connection.VERIFICATION_STATUS_FAILED:
-                    sendNotification(getString(R.string.lblRejectedCall), getString(R.string.lblStatusVerifyFailed));
-                    callReject(details);
+                    sendNotification(getString(R.string.lblDisallowedCall), getString(R.string.lblStatusVerifyFailed));
+                    callDisallow(details, false);
                     break;
                 case Connection.VERIFICATION_STATUS_PASSED:
                     //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifySuccess));
@@ -58,25 +58,25 @@ public class ScreeningService extends CallScreeningService {
         }
     }
 
-    public boolean isEmergencyCall(Call.Details details) {
+    private boolean isEmergencyCall(Call.Details details) {
         return details.hasProperty(Call.Details.PROPERTY_EMERGENCY_CALLBACK_MODE)
                 || details.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL);
     }
 
-    public void callReject(Call.Details details) {
-        Log.d("Carrion", "Rejecting call");
+    private void callDisallow(Call.Details details, boolean reject) {
+        Log.d("Carrion", "Disallowing call");
         CallResponse.Builder response = new CallResponse.Builder();
         response.setDisallowCall(true);
-        response.setRejectCall(true);
+        response.setRejectCall(reject);
         respondToCall(details, response.build());
     }
 
-    public void callAllow(Call.Details details) {
+    private void callAllow(Call.Details details) {
         Log.d("Carrion", "Allowing call");
         respondToCall(details, new CallResponse.Builder().build());
     }
 
-    public void sendNotification(String title, String content){
+    private void sendNotification(String title, String content){
         //Log.d("Carrion", "Trying to notify: " + title + ", " + content);
         if(isDeviceLocked()) {
             if(notificationManager == null) {
