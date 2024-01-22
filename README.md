@@ -1,7 +1,7 @@
 Carrion
 ==========
 
-Automatically rejects all calls failing STIR/SHAKEN verification.
+Automatically declines all calls failing STIR/SHAKEN verification.
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
      alt="Get it on F-Droid"
@@ -22,6 +22,16 @@ Usage
 - A call that is unknown will be allowed and a notification shown
 - A call that is verified will be allowed without any notification
 - Calls from contacts or emergency numbers are always allowed
+
+Database Usage
+--------------
+- For extra coverage and to enable functionality on devices without STIR/SHAKEN there is a local database lookup feature
+- Calls from numbers matched in the database will not be declined, but will be silenced
+- The full database contains all numbers reported in the past 30 data files
+- The high confidence database contains all numbers reported at least twice in the past 60 data files
+- You must manually download the database occasionally
+- The database function can be disabled via the `delete database` button
+- There is more information about the database here: https://www.ftc.gov/policy-notices/open-government/data-sets/do-not-call-data
 
 Requirements
 ------------
