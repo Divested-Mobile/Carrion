@@ -9,7 +9,8 @@
     <string name="lblStatusVerifySuccess">🟢 Verification succeeded 🟢</string>
     <string name="lblStatusVerifyUnknown">🟡 Verification unknown 🟡</string>
     <string name="lblStatusExcluded">Excluded from screening</string>
-    <string name="lblUpdateDatabase">Update database</string>
     <string name="lblDeleteDatabase">Delete database</string>
     <string name="lblStatusMatchedDatabase">🔴 Number in database 🔴</string>
+    <string name="lblDownloadDatabaseFull">Download all reported numbers</string>
+    <string name="lblDownloadDatabaseHighConf">Download high confidence numbers</string>
 </resources>

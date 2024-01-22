@@ -73,10 +73,13 @@ public class MainActivity extends Activity {
 
     @Override
     public final boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.mnuUpdateDatabase) {
-            logView.append("Updating database...\n");
+        if (item.getItemId() == R.id.mnuUpdateDatabaseFull) {
+            logView.append("Downloading full database...\n");
             downloadDatabase("https://divested.dev/complaint_numbers.txt", database);
-        } else if (item.getItemId() == R.id.mnuDeleteDatabase) {
+        } else if (item.getItemId() == R.id.mnuUpdateDatabaseHighconf) {
+            logView.append("Downloading high confidence only database...\n");
+            downloadDatabase("https://divested.dev/complaint_numbers-highconf.txt", database);
+        }  else if (item.getItemId() == R.id.mnuDeleteDatabase) {
             if (database != null && database.exists()) {
                 logView.append("Deleting database...\n");
                 if (database.delete()) {

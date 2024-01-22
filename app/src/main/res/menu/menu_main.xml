@@ -3,8 +3,12 @@
     tools:context="us.spotco.malwarescanner.MainActivity">
 
     <item
-        android:id="@+id/mnuUpdateDatabase"
-        android:title="@string/lblUpdateDatabase" />
+        android:id="@+id/mnuUpdateDatabaseFull"
+        android:title="@string/lblDownloadDatabaseFull" />
+
+    <item
+        android:id="@+id/mnuUpdateDatabaseHighconf"
+        android:title="@string/lblDownloadDatabaseHighConf" />
 
     <item
         android:id="@+id/mnuDeleteDatabase"
