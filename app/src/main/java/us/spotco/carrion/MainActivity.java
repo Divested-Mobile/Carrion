@@ -20,24 +20,115 @@ import android.app.Activity;
 import android.app.role.RoleManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Random;
 
 public class MainActivity extends Activity {
+
+    private TextView logView;
+    private File database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(android.R.style.Theme_DeviceDefault_DayNight);
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.content_main);
+
+        logView = findViewById(R.id.txtLogOutput);
+        logView.setMovementMethod(new ScrollingMovementMethod());
+        logView.setTextIsSelectable(false);
 
         if (!getSystemService(RoleManager.class).isRoleHeld(RoleManager.ROLE_CALL_SCREENING)) {
             RoleManager roleManager = (RoleManager) getSystemService(ROLE_SERVICE);
             Intent intent = roleManager.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING);
             startActivityForResult(intent, new Random().nextInt());
+            logView.append("I am not the screening service, requesting permission.\n");
+        } else {
+            logView.append("I am the screening service.\n");
         }
+
+        database = new File(getFilesDir() + "/complaint_numbers.txt");
+        if (database.exists()) {
+            logView.append("Database available.\n");
+        } else {
+            logView.append("Database not available.\n");
+        }
+    }
+
+    @Override
+    public final boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public final boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.mnuUpdateDatabase) {
+            logView.append("Updating database...\n");
+            downloadDatabase("https://divested.dev/complaint_numbers.txt", database);
+        } else if (item.getItemId() == R.id.mnuDeleteDatabase) {
+            if (database != null && database.exists()) {
+                logView.append("Deleting database...\n");
+                if (database.delete()) {
+                    logView.append("Deleted database.\n");
+                } else {
+                    logView.append("Failed to delete database.\n");
+                }
+            } else {
+                logView.append("Database not available.\n");
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void downloadDatabase(String url, File out) {
+        new Thread(() -> {
+            try {
+                File outNew = new File(out + ".new");
+                if (outNew.exists()) {
+                    outNew.delete();
+                }
+                HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+                connection.setConnectTimeout(90000);
+                connection.setReadTimeout(30000);
+                connection.addRequestProperty("User-Agent", "Carrion");
+                if (out.exists()) {
+                    connection.setIfModifiedSince(out.lastModified());
+                }
+                connection.connect();
+                int res = connection.getResponseCode();
+                if (res != 304) {
+                    if (res == 200) {
+                        FileOutputStream fileOutputStream = new FileOutputStream(outNew);
+                        final byte[] data = new byte[1024];
+                        int count;
+                        while ((count = connection.getInputStream().read(data, 0, 1024)) != -1) {
+                            fileOutputStream.write(data, 0, count);
+                        }
+                        fileOutputStream.close();
+                        outNew.renameTo(out); //Move the new file into place
+                        logView.append("Database download successful.\n");
+                    } else {
+                        logView.append("Database download failed.\n");
+                    }
+                } else {
+                    logView.append("Database already latest.\n");
+                }
+                connection.disconnect();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
 }

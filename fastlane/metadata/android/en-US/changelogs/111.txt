@@ -1,0 +1,2 @@
+* Disallows calls instead of rejecting them
+* Local FCC reported number lookup, silenced on match

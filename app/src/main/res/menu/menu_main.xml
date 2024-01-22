@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="us.spotco.malwarescanner.MainActivity">
+
+    <item
+        android:id="@+id/mnuUpdateDatabase"
+        android:title="@string/lblUpdateDatabase" />
+
+    <item
+        android:id="@+id/mnuDeleteDatabase"
+        android:title="@string/lblDeleteDatabase" />
+
+</menu>

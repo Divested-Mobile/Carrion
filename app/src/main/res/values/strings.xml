@@ -2,10 +2,14 @@
     <string name="app_name">Carrion</string>
     <string name="lblNotificationAlertTitle">Call screening alerts</string>
     <string name="lblNotificationAlertDescription">Used to inform the user the status of the screened calls</string>
+    <string name="lblSilencedCall">Silenced call</string>
     <string name="lblDisallowedCall">Disallowed call</string>
     <string name="lblAllowedCall">Allowed call</string>
     <string name="lblStatusVerifyFailed">🔴 Verification failed 🔴</string>
     <string name="lblStatusVerifySuccess">🟢 Verification succeeded 🟢</string>
     <string name="lblStatusVerifyUnknown">🟡 Verification unknown 🟡</string>
     <string name="lblStatusExcluded">Excluded from screening</string>
+    <string name="lblUpdateDatabase">Update database</string>
+    <string name="lblDeleteDatabase">Delete database</string>
+    <string name="lblStatusMatchedDatabase">🔴 Number in database</string>
 </resources>
