@@ -44,24 +44,18 @@ public class ScreeningService extends CallScreeningService {
         Log.d("Carrion", "Received call");
         if (isIncoming && !isEmergencyCall(details)) {
             Log.d("Carrion", "Verification " + details.getCallerNumberVerificationStatus());
-            if (isNumberInDatabase(details.getHandle().toString())) {
+            if (details.getCallerNumberVerificationStatus() == Connection.VERIFICATION_STATUS_FAILED) {
+                sendNotification(getString(R.string.lblDisallowedCall), getString(R.string.lblStatusVerifyFailed));
+                callDisallow(details);
+            } else if (isNumberInDatabase(details.getHandle().toString())) {
                 sendNotification(getString(R.string.lblSilencedCall), getString(R.string.lblStatusMatchedDatabase));
                 callSilence(details);
+            } else if (details.getCallerNumberVerificationStatus() == Connection.VERIFICATION_STATUS_PASSED) {
+                //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifySuccess));
+                callAllow(details);
             } else {
-                switch (details.getCallerNumberVerificationStatus()) {
-                    case Connection.VERIFICATION_STATUS_FAILED:
-                        sendNotification(getString(R.string.lblDisallowedCall), getString(R.string.lblStatusVerifyFailed));
-                        callDisallow(details, false);
-                        break;
-                    case Connection.VERIFICATION_STATUS_PASSED:
-                        //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifySuccess));
-                        callAllow(details);
-                        break;
-                    default:
-                        sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifyUnknown));
-                        callAllow(details);
-                        break;
-                }
+                sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifyUnknown));
+                callAllow(details);
             }
         } else {
             //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusExcluded));
@@ -74,11 +68,10 @@ public class ScreeningService extends CallScreeningService {
                 || details.hasProperty(Call.Details.PROPERTY_NETWORK_IDENTIFIED_EMERGENCY_CALL);
     }
 
-    private void callDisallow(Call.Details details, boolean reject) {
+    private void callDisallow(Call.Details details) {
         Log.d("Carrion", "Disallowing call");
         CallResponse.Builder response = new CallResponse.Builder();
         response.setDisallowCall(true);
-        response.setRejectCall(reject);
         respondToCall(details, response.build());
     }
 

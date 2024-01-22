@@ -11,5 +11,5 @@
     <string name="lblStatusExcluded">Excluded from screening</string>
     <string name="lblUpdateDatabase">Update database</string>
     <string name="lblDeleteDatabase">Delete database</string>
-    <string name="lblStatusMatchedDatabase">🔴 Number in database</string>
+    <string name="lblStatusMatchedDatabase">🔴 Number in database 🔴</string>
 </resources>
