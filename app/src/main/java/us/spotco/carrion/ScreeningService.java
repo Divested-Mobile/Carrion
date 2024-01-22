@@ -36,6 +36,7 @@ public class ScreeningService extends CallScreeningService {
     private NotificationManager notificationManager = null;
     private File database = null;
     private static HashSet<String> databaseNumbers = null;
+    private static long databaseTimestamp = 0;
 
     @Override
     public void onScreenCall(Call.Details details) {
@@ -129,9 +130,10 @@ public class ScreeningService extends CallScreeningService {
         if (database == null) {
             database = new File(getFilesDir() + "/complaint_numbers.txt");
         }
-        if (database.exists()) {
-            if (databaseNumbers == null) {
+        if (database.exists() && database.length() > 0) {
+            if (databaseNumbers == null || databaseTimestamp != database.lastModified()) {
                 databaseNumbers = new HashSet<>();
+                databaseTimestamp = database.lastModified();
                 try {
                     Scanner s = new Scanner(database);
                     while (s.hasNextLine()) {
