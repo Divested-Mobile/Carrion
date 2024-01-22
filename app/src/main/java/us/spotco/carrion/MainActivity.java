@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
             logView.append("I am the screening service.\n");
         }
 
-        database = new File(getFilesDir() + "/complaint_numbers.txt");
+        database = new File(getFilesDir() + "/complaint_numbers.txt.gz");
         if (database.exists()) {
             logView.append("Database available.\n");
         } else {
@@ -75,11 +75,11 @@ public class MainActivity extends Activity {
     public final boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.mnuUpdateDatabaseFull) {
             logView.append("Downloading full database...\n");
-            downloadDatabase("https://divested.dev/complaint_numbers.txt", database);
+            downloadDatabase("https://divested.dev/complaint_numbers.txt.gz", database);
         } else if (item.getItemId() == R.id.mnuUpdateDatabaseHighconf) {
             logView.append("Downloading high confidence only database...\n");
-            downloadDatabase("https://divested.dev/complaint_numbers-highconf.txt", database);
-        }  else if (item.getItemId() == R.id.mnuDeleteDatabase) {
+            downloadDatabase("https://divested.dev/complaint_numbers-highconf.txt.gz", database);
+        } else if (item.getItemId() == R.id.mnuDeleteDatabase) {
             if (database != null && database.exists()) {
                 logView.append("Deleting database...\n");
                 if (database.delete()) {

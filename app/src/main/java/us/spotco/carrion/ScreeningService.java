@@ -28,9 +28,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.zip.GZIPInputStream;
 
 public class ScreeningService extends CallScreeningService {
     private NotificationManager notificationManager = null;
@@ -121,16 +124,16 @@ public class ScreeningService extends CallScreeningService {
     private boolean isNumberInDatabase(String number) {
         //Log.d("Carrion", "NUMBER LOOKUP: " + number);
         if (database == null) {
-            database = new File(getFilesDir() + "/complaint_numbers.txt");
+            database = new File(getFilesDir() + "/complaint_numbers.txt.gz");
         }
         if (database.exists() && database.length() > 0) {
             if (databaseNumbers == null || databaseTimestamp != database.lastModified()) {
                 databaseNumbers = new HashSet<>();
                 databaseTimestamp = database.lastModified();
                 try {
-                    Scanner s = new Scanner(database);
+                    Scanner s = new Scanner(new InputStreamReader(new GZIPInputStream(Files.newInputStream(database.toPath()))));
                     while (s.hasNextLine()) {
-                        databaseNumbers.add(s.nextLine());
+                        databaseNumbers.add(s.nextLine().trim());
                     }
                     s.close();
                     Log.d("Carrion", "Loaded database with " + databaseNumbers.size() + " entries");

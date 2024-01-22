@@ -1,0 +1,2 @@
+* Add an alternative high confidence database
+* Compress the database downloads
