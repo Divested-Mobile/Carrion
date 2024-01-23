@@ -27,8 +27,8 @@ Database Usage
 --------------
 - For extra coverage and to enable functionality on devices without STIR/SHAKEN there is a local database lookup feature
 - Calls from numbers matched in the database will not be declined, but will be silenced
-- The full database contains all numbers reported in the past 30 data files
-- The high confidence database contains all numbers reported at least twice in the past 60 data files
+- The high confidence database contains all numbers reported at least twice in the past 90 data files
+- The "full" database contains all numbers reported in the past 30 data files + the high confidence database
 - You must manually download the database occasionally
 - The database function can be disabled via the `delete database` button
 - There is more information about the database here: https://www.ftc.gov/policy-notices/open-government/data-sets/do-not-call-data
