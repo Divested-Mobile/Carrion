@@ -20,7 +20,10 @@ import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 import android.app.Activity;
 import android.app.role.RoleManager;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
@@ -77,11 +80,19 @@ public class MainActivity extends Activity {
     @Override
     public final boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.mnuUpdateDatabaseFull) {
-            logView.append("Downloading full database...\n");
-            downloadDatabase("https://divested.dev/complaint_numbers.txt.gz", database);
+            if(isNetworkAvailable(this)) {
+                logView.append("Downloading full database...\n");
+                downloadDatabase("https://divested.dev/complaint_numbers.txt.gz", database);
+            } else {
+                logView.append("No Internet, can't download database.\n");
+            }
         } else if (item.getItemId() == R.id.mnuUpdateDatabaseHighconf) {
-            logView.append("Downloading high confidence only database...\n");
-            downloadDatabase("https://divested.dev/complaint_numbers-highconf.txt.gz", database);
+            if(isNetworkAvailable(this)) {
+                logView.append("Downloading high confidence only database...\n");
+                downloadDatabase("https://divested.dev/complaint_numbers-highconf.txt.gz", database);
+            } else {
+                logView.append("No Internet, can't download database.\n");
+            }
         } else if (item.getItemId() == R.id.mnuDeleteDatabase) {
             if (database != null && database.exists()) {
                 logView.append("Deleting database...\n");
@@ -142,6 +153,13 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
             }
         }).start();
+    }
+
+    //Credit: https://stackoverflow.com/a/4239019
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 }
