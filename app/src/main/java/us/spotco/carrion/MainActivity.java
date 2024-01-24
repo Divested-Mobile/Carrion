@@ -68,12 +68,19 @@ public class MainActivity extends Activity {
         } else {
             logView.append("Database not available.\n");
         }
+
+        logView.append("Stats:\n");
+        logView.append("\tVerification passed: " + getDefaultSharedPreferences(this).getInt("STAT_VERIFICATION_PASSED", 0) + "\n");
+        logView.append("\tVerification failed: " + getDefaultSharedPreferences(this).getInt("STAT_VERIFICATION_FAILED", 0) + "\n");
+        logView.append("\tVerification unknown: " + getDefaultSharedPreferences(this).getInt("STAT_VERIFICATION_UNKNOWN", 0) + "\n");
+        logView.append("\tMatched database: " + getDefaultSharedPreferences(this).getInt("STAT_MATCHED_DATABASE", 0) + "\n");
+        logView.append("\tExcluded: " + getDefaultSharedPreferences(this).getInt("STAT_EXCLUDED", 0) + "\n");
     }
 
     @Override
     public final boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        menu.findItem(R.id.toggleSilenceUnknown).setChecked(getDefaultSharedPreferences(this).getBoolean("SILENCE_UNKNOWN", false));
+        menu.findItem(R.id.toggleSilenceUnknown).setChecked(getDefaultSharedPreferences(this).getBoolean("PREF_SILENCE_UNKNOWN", false));
         return true;
     }
 
@@ -106,9 +113,9 @@ public class MainActivity extends Activity {
             }
         } else if (item.getItemId() == R.id.toggleSilenceUnknown) {
             if (!item.isChecked()) {
-                getDefaultSharedPreferences(this).edit().putBoolean("SILENCE_UNKNOWN", true).apply();
+                getDefaultSharedPreferences(this).edit().putBoolean("PREF_SILENCE_UNKNOWN", true).apply();
             } else {
-                getDefaultSharedPreferences(this).edit().putBoolean("SILENCE_UNKNOWN", false).apply();
+                getDefaultSharedPreferences(this).edit().putBoolean("PREF_SILENCE_UNKNOWN", false).apply();
             }
             item.setChecked(!item.isChecked());
         }

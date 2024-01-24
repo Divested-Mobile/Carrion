@@ -52,24 +52,29 @@ public class ScreeningService extends CallScreeningService {
             if (details.getCallerNumberVerificationStatus() == Connection.VERIFICATION_STATUS_FAILED) {
                 sendNotification(getString(R.string.lblDisallowedCall), getString(R.string.lblStatusVerifyFailed));
                 callDisallow(details);
+                incrementIntPref("STAT_VERIFICATION_FAILED");
             } else if (isNumberInDatabase(details.getHandle().toString())) {
                 sendNotification(getString(R.string.lblSilencedCall), getString(R.string.lblStatusMatchedDatabase));
                 callSilence(details);
+                incrementIntPref("STAT_MATCHED_DATABASE");
             } else if (details.getCallerNumberVerificationStatus() == Connection.VERIFICATION_STATUS_PASSED) {
                 //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifySuccess));
                 callAllow(details);
+                incrementIntPref("STAT_VERIFICATION_PASSED");
             } else {
-                if (getDefaultSharedPreferences(this).getBoolean("SILENCE_UNKNOWN", false)) {
+                if (getDefaultSharedPreferences(this).getBoolean("PREF_SILENCE_UNKNOWN", false)) {
                     sendNotification(getString(R.string.lblSilencedCall), getString(R.string.lblStatusVerifyUnknown));
                     callSilence(details);
                 } else {
                     sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifyUnknown));
                     callAllow(details);
                 }
+                incrementIntPref("STAT_VERIFICATION_UNKNOWN");
             }
         } else {
             //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusExcluded));
             callAllow(details);
+            incrementIntPref("STAT_EXCLUDED");
         }
     }
 
@@ -163,5 +168,10 @@ public class ScreeningService extends CallScreeningService {
             return false;
         }
         return false;
+    }
+
+    private void incrementIntPref(String pref) {
+        int curValue = getDefaultSharedPreferences(this).getInt(pref, 0);
+        getDefaultSharedPreferences(this).edit().putInt(pref, curValue + 1).apply();
     }
 }
