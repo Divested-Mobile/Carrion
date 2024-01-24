@@ -1,0 +1,3 @@
+* Don't try to download database when not connected to Internet
+* Add call stats
+* Add ability to silence instead of allowing calls with unknown verification
