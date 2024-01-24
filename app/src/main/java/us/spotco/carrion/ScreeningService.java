@@ -16,6 +16,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 package us.spotco.carrion;
 
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.app.KeyguardManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -57,8 +59,13 @@ public class ScreeningService extends CallScreeningService {
                 //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifySuccess));
                 callAllow(details);
             } else {
-                sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifyUnknown));
-                callAllow(details);
+                if (getDefaultSharedPreferences(this).getBoolean("SILENCE_UNKNOWN", false)) {
+                    sendNotification(getString(R.string.lblSilencedCall), getString(R.string.lblStatusVerifyUnknown));
+                    callSilence(details);
+                } else {
+                    sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusVerifyUnknown));
+                    callAllow(details);
+                }
             }
         } else {
             //sendNotification(getString(R.string.lblAllowedCall), getString(R.string.lblStatusExcluded));

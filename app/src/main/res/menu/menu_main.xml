@@ -14,4 +14,9 @@
         android:id="@+id/mnuDeleteDatabase"
         android:title="@string/lblDeleteDatabase" />
 
+    <item
+        android:id="@+id/toggleSilenceUnknown"
+        android:title="@string/lblSilenceUnknownToggle"
+        android:checkable="true" />
+
 </menu>

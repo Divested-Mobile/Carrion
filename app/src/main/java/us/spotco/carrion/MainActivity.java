@@ -16,6 +16,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 package us.spotco.carrion;
 
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+
 import android.app.Activity;
 import android.app.role.RoleManager;
 import android.content.Intent;
@@ -68,6 +70,7 @@ public class MainActivity extends Activity {
     @Override
     public final boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        menu.findItem(R.id.toggleSilenceUnknown).setChecked(getDefaultSharedPreferences(this).getBoolean("SILENCE_UNKNOWN", false));
         return true;
     }
 
@@ -90,6 +93,13 @@ public class MainActivity extends Activity {
             } else {
                 logView.append("Database not available.\n");
             }
+        } else if (item.getItemId() == R.id.toggleSilenceUnknown) {
+            if (!item.isChecked()) {
+                getDefaultSharedPreferences(this).edit().putBoolean("SILENCE_UNKNOWN", true).apply();
+            } else {
+                getDefaultSharedPreferences(this).edit().putBoolean("SILENCE_UNKNOWN", false).apply();
+            }
+            item.setChecked(!item.isChecked());
         }
         return super.onOptionsItemSelected(item);
     }
