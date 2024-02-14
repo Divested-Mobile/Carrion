@@ -62,7 +62,10 @@ public class ScreeningService extends CallScreeningService {
                 callAllow(details);
                 incrementIntPref("STAT_VERIFICATION_PASSED");
             } else {
-                if (getDefaultSharedPreferences(this).getBoolean("PREF_SILENCE_UNKNOWN", false)) {
+                if (getDefaultSharedPreferences(this).getBoolean("PREF_BLOCK_UNKNOWN", false)) {
+                    sendNotification(getString(R.string.lblDisallowedCall), getString(R.string.lblStatusVerifyUnknown));
+                    callDisallow(details);
+                } else if (getDefaultSharedPreferences(this).getBoolean("PREF_SILENCE_UNKNOWN", false)) {
                     sendNotification(getString(R.string.lblSilencedCall), getString(R.string.lblStatusVerifyUnknown));
                     callSilence(details);
                 } else {

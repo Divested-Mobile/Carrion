@@ -111,6 +111,13 @@ public class MainActivity extends Activity {
             } else {
                 logView.append("Database not available.\n");
             }
+        } else if (item.getItemId() == R.id.toggleBlockUnknown) {
+            if (!item.isChecked()) {
+                getDefaultSharedPreferences(this).edit().putBoolean("PREF_BLOCK_UNKNOWN", true).apply();
+            } else {
+                getDefaultSharedPreferences(this).edit().putBoolean("PREF_BLOCK_UNKNOWN", false).apply();
+            }
+            item.setChecked(!item.isChecked());
         } else if (item.getItemId() == R.id.toggleSilenceUnknown) {
             if (!item.isChecked()) {
                 getDefaultSharedPreferences(this).edit().putBoolean("PREF_SILENCE_UNKNOWN", true).apply();

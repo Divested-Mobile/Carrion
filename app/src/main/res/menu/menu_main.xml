@@ -19,4 +19,9 @@
         android:title="@string/lblSilenceUnknownToggle"
         android:checkable="true" />
 
+    <item
+        android:id="@+id/toggleBlockUnknown"
+        android:title="@string/lblBlockUnknownToggle"
+        android:checkable="true" />
+
 </menu>

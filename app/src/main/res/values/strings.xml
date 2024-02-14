@@ -13,5 +13,6 @@
     <string name="lblStatusMatchedDatabase">🔴 Number in database 🔴</string>
     <string name="lblDownloadDatabaseFull">Download all reported numbers</string>
     <string name="lblDownloadDatabaseHighConf">Download high confidence numbers</string>
-    <string name="lblSilenceUnknownToggle">Silence verification unknown</string>
+    <string name="lblSilenceUnknownToggle">Silence verification unsigned</string>
+    <string name="lblBlockUnknownToggle">Block verification unsigned</string>
 </resources>
