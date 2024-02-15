@@ -53,7 +53,7 @@ public class ScreeningService extends CallScreeningService {
                 sendNotification(getString(R.string.lblDisallowedCall), getString(R.string.lblStatusVerifyFailed));
                 callDisallow(details);
                 incrementIntPref("STAT_VERIFICATION_FAILED");
-            } else if (isNumberInDatabase(details.getHandle().toString())) {
+            } else if (details.getHandle() != null && isNumberInDatabase(details.getHandle().toString())) {
                 sendNotification(getString(R.string.lblSilencedCall), getString(R.string.lblStatusMatchedDatabase));
                 callSilence(details);
                 incrementIntPref("STAT_MATCHED_DATABASE");
