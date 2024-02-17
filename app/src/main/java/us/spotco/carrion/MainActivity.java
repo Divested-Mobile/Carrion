@@ -81,6 +81,7 @@ public class MainActivity extends Activity {
     public final boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         menu.findItem(R.id.toggleSilenceUnknown).setChecked(getDefaultSharedPreferences(this).getBoolean("PREF_SILENCE_UNKNOWN", false));
+        menu.findItem(R.id.toggleBlockUnknown).setChecked(getDefaultSharedPreferences(this).getBoolean("PREF_BLOCK_UNKNOWN", false));
         return true;
     }
 
