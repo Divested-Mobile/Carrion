@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Carrion</string>
+    <string name="lblNotificationAlertTitle">Alertas de análise das chamadas</string>
+    <string name="lblNotificationAlertDescription">Usado para informar o usuário sobre o status de chamadas analisadas</string>
+    <string name="lblSilencedCall">Chamada silenciada</string>
+    <string name="lblDisallowedCall">Chamada não-permitida</string>
+    <string name="lblAllowedCall">Chamada permitida</string>
+    <string name="lblStatusVerifyFailed">🔴 Verificação falhou 🔴</string>
+    <string name="lblStatusVerifySuccess">🟢 Verificado com sucesso 🟢</string>
+    <string name="lblStatusVerifyUnknown">🟡 Verificação indefinida 🟡</string>
+    <string name="lblStatusExcluded">Excluído do filtro</string>
+    <string name="lblDeleteDatabase">Excluir banco de dados</string>
+    <string name="lblStatusMatchedDatabase">🔴 Número no banco de dados 🔴</string>
+    <string name="lblDownloadDatabaseFull">Baixar todos os números reportados</string>
+    <string name="lblDownloadDatabaseHighConf">Baixar números com alta confiança de serem maliciosos</string>
+    <string name="lblSilenceUnknownToggle">Silenciar a chamada quando a verificação não é assinada</string>
+    <string name="lblBlockUnknownToggle">Bloquear a chamada quando a verificação não é assinada</string>
+</resources>

@@ -1,0 +1,1 @@
+Rejeita automaticamente todas as chamadas que falham a verificação do STIR/SHAKEN. Precisa de suporte oficial ao Android 11 ou superior, VoLTE funcionando, e suporte da operadora.
