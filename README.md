@@ -43,7 +43,7 @@ Requirements
 
 Notes
 -----
-- Contacts permission is required/used for exclusion
+- Contacts permission is NOT required/used for exclusion
   - The system itself will not pass calls from contacts to the active Call Screening app
 - The robocaller database is entirely optional, STIR/SHAKEN verification is completely independent
 - Internet is only optionally used to download the robocaller database
