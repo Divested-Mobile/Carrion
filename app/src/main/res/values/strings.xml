@@ -15,4 +15,9 @@
     <string name="lblDownloadDatabaseHighConf">Download high confidence numbers</string>
     <string name="lblSilenceUnknownToggle">Silence verification unsigned</string>
     <string name="lblBlockUnknownToggle">Block verification unsigned</string>
+    <string name="lblDatabaseServer">Database server override</string>
+    <string name="lblOverride">Override</string>
+    <string name="lblResetPrimary">Primary Servers</string>
+    <string name="lblResetCloudflare">Cloudflare Mirror</string>
+    <string name="main_database_override">Using server %s</string>
 </resources>

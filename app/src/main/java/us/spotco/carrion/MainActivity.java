@@ -19,16 +19,19 @@ package us.spotco.carrion;
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.role.RoleManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.io.File;
@@ -41,6 +44,8 @@ public class MainActivity extends Activity {
 
     private TextView logView;
     private File database;
+    private final String databasePrimary = "https://divested.dev/";
+    private final String databaseCloudflare = "https://eeyo.re/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,14 +95,14 @@ public class MainActivity extends Activity {
         if (item.getItemId() == R.id.mnuUpdateDatabaseFull) {
             if(isNetworkAvailable(this)) {
                 logView.append("Downloading full database...\n");
-                downloadDatabase("https://divested.dev/complaint_numbers.txt.gz", database);
+                downloadDatabase(getDatabaseURL(this) + "complaint_numbers.txt.gz", database);
             } else {
                 logView.append("No Internet, can't download database.\n");
             }
         } else if (item.getItemId() == R.id.mnuUpdateDatabaseHighconf) {
             if(isNetworkAvailable(this)) {
                 logView.append("Downloading high confidence only database...\n");
-                downloadDatabase("https://divested.dev/complaint_numbers-highconf.txt.gz", database);
+                downloadDatabase(getDatabaseURL(this) + "complaint_numbers-highconf.txt.gz", database);
             } else {
                 logView.append("No Internet, can't download database.\n");
             }
@@ -112,6 +117,29 @@ public class MainActivity extends Activity {
             } else {
                 logView.append("Database not available.\n");
             }
+        } else if (item.getItemId() == R.id.mnuDatabaseServer) {
+            AlertDialog.Builder builderServerOverride = new AlertDialog.Builder(this);
+            builderServerOverride.setTitle(getString(R.string.lblDatabaseServer));
+            final EditText inputServerOverride = new EditText(this);
+            inputServerOverride.setInputType(InputType.TYPE_CLASS_TEXT);
+            inputServerOverride.setText(getDatabaseURL(this));
+            builderServerOverride.setView(inputServerOverride);
+            builderServerOverride.setPositiveButton(getString(R.string.lblOverride), (dialog, which) -> {
+                String newServer = inputServerOverride.getText().toString();
+                if (!newServer.endsWith("/")) {
+                    newServer += "/";
+                }
+                getDefaultSharedPreferences(this).edit().putString("DATABASE_SERVER", newServer).apply();
+            });
+            builderServerOverride.setNegativeButton(getString(R.string.lblResetPrimary), (dialog, which) -> {
+                getDefaultSharedPreferences(this).edit().putString("DATABASE_SERVER", databasePrimary).apply();
+                dialog.cancel();
+            });
+            builderServerOverride.setNeutralButton(getString(R.string.lblResetCloudflare), (dialog, which) -> {
+                getDefaultSharedPreferences(this).edit().putString("DATABASE_SERVER", databaseCloudflare).apply();
+                dialog.cancel();
+            });
+            builderServerOverride.show();
         } else if (item.getItemId() == R.id.toggleBlockUnknown) {
             if (!item.isChecked()) {
                 getDefaultSharedPreferences(this).edit().putBoolean("PREF_BLOCK_UNKNOWN", true).apply();
@@ -133,6 +161,9 @@ public class MainActivity extends Activity {
     private void downloadDatabase(String url, File out) {
         new Thread(() -> {
             try {
+                if (!url.startsWith(databasePrimary)) {
+                    logView.append(getString(R.string.main_database_override, getDatabaseURL(this)) + "\n");
+                }
                 File outNew = new File(out + ".new");
                 if (outNew.exists()) {
                     outNew.delete();
@@ -175,6 +206,10 @@ public class MainActivity extends Activity {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    private String getDatabaseURL(Context context) {
+        return getDefaultSharedPreferences(context).getString("DATABASE_SERVER", databasePrimary);
     }
 
 }
