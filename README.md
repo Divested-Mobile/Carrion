@@ -9,7 +9,7 @@ Automatically declines all calls failing STIR/SHAKEN verification.
 
 What?
 -----
-- Ever receieve a spam call and try to call it back, only for it to be out of service or some stranger? This blocks that.
+- Ever receive a spam call and try to call it back, only for it to be out of service or some stranger? This blocks that.
 - STIR/SHAKEN provides cryptographic attestation of caller ID and is mandated by law in USA and Canada
 - https://www.fcc.gov/call-authentication
 - https://en.wikipedia.org/wiki/STIR/SHAKEN
@@ -17,7 +17,7 @@ What?
 
 Usage
 -----
-- Install the app, grant the screening perission, nothing more!
+- Install the app, grant the screening permission, nothing more!
 - A call that failed verification will be disallowed and a failure notification shown
 - A call that is unsigned will be allowed and a notification shown
   - You can optionally choose to silence or block verification unsigned calls
