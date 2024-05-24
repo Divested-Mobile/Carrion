@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Carrion</string>
+    <string name="lblNotificationAlertTitle">Alertas de filtrado de llamadas</string>
+    <string name="lblNotificationAlertDescription">Se utiliza para informar al usuario el estado de las llamadas filtradas.</string>
+    <string name="lblSilencedCall">Llamada silenciada</string>
+    <string name="lblDisallowedCall">Llamada no permitida</string>
+    <string name="lblAllowedCall">Llamada permitida</string>
+    <string name="lblStatusVerifyFailed">🔴 Verificación fallida 🔴</string>
+    <string name="lblStatusVerifySuccess">🟢 Verificación correcta 🟢</string>
+    <string name="lblStatusVerifyUnknown">🟡 Verificación no definida 🟡</string>
+    <string name="lblStatusExcluded">Excluido del filtro</string>
+    <string name="lblDeleteDatabase">Eliminar base de datos</string>
+    <string name="lblStatusMatchedDatabase">🔴 Número en la base de datos 🔴</string>
+    <string name="lblDownloadDatabaseFull">Descargar todos los números reportados</string>
+    <string name="lblDownloadDatabaseHighConf">Descargar números previsiblemente maliciosos</string>
+    <string name="lblSilenceUnknownToggle">Silenciar en verificaciones sin firmar</string>
+    <string name="lblBlockUnknownToggle">Bloquear en verificaciones sin firmar</string>
+    <string name="lblDatabaseServer">Anulación del servidor de base de datos</string>
+    <string name="lblOverride">Anular</string>
+    <string name="lblResetPrimary">Servidores principales</string>
+    <string name="lblResetCloudflare">Servidores de copia en Cloudflare</string>
+    <string name="main_database_override">Usando el servidor %s</string>
+</resources>
