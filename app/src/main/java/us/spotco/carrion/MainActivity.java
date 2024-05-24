@@ -93,14 +93,14 @@ public class MainActivity extends Activity {
     @Override
     public final boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.mnuUpdateDatabaseFull) {
-            if(isNetworkAvailable(this)) {
+            if (isNetworkAvailable(this)) {
                 logView.append("Downloading full database...\n");
                 downloadDatabase(getDatabaseURL(this) + "complaint_numbers.txt.gz", database);
             } else {
                 logView.append("No Internet, can't download database.\n");
             }
         } else if (item.getItemId() == R.id.mnuUpdateDatabaseHighconf) {
-            if(isNetworkAvailable(this)) {
+            if (isNetworkAvailable(this)) {
                 logView.append("Downloading high confidence only database...\n");
                 downloadDatabase(getDatabaseURL(this) + "complaint_numbers-highconf.txt.gz", database);
             } else {

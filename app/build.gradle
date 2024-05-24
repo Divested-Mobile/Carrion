@@ -10,9 +10,9 @@ android {
         applicationId "us.spotco.carrion"
         minSdk 30
         targetSdk 34
-        versionCode 119
-        versionName "1.19"
-        resConfigs 'en', 'pt'
+        versionCode 120
+        versionName "1.20"
+        resConfigs 'en', 'pt', 'es'
     }
 
     buildTypes {

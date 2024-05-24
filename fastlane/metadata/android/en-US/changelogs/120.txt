@@ -1,0 +1,2 @@
+* Added Spanish translations thanks to @vzamanillo
+* Optimize database loading

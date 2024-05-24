@@ -71,6 +71,7 @@ Known Issues
 Credits
 -------
 - @lucasmz for Portuguese translations.
+- @vzamanillo for Spanish translations.
 - Icons: Google/Android/AOSP, License: Apache 2.0, https://google.github.io/material-design-icons/
 
 Donate

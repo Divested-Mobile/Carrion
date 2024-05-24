@@ -29,12 +29,12 @@ import android.telecom.Connection;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.zip.GZIPInputStream;
 
 public class ScreeningService extends CallScreeningService {
@@ -146,12 +146,14 @@ public class ScreeningService extends CallScreeningService {
                 databaseNumbers = new HashSet<>();
                 databaseTimestamp = database.lastModified();
                 try {
-                    Scanner s = new Scanner(new InputStreamReader(new GZIPInputStream(Files.newInputStream(database.toPath()))));
-                    while (s.hasNextLine()) {
-                        databaseNumbers.add(s.nextLine().trim());
+                    long startTime = System.currentTimeMillis();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(new GZIPInputStream(Files.newInputStream(database.toPath()))));
+                    String line = "";
+                    while ((line = reader.readLine()) != null) {
+                        databaseNumbers.add(line.trim());
                     }
-                    s.close();
-                    Log.d("Carrion", "Loaded database with " + databaseNumbers.size() + " entries");
+                    reader.close();
+                    Log.d("Carrion", "Loaded database with " + databaseNumbers.size() + " entries in " + (System.currentTimeMillis() - startTime) + "ms");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
