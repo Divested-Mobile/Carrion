@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="lblNotificationAlertTitle">来电筛选提醒</string>
+    <string name="lblSilencedCall">已静音来电</string>
+    <string name="lblAllowedCall">允许的来电</string>
+    <string name="lblStatusVerifySuccess">🟢 验证成功 🟢</string>
+    <string name="lblStatusVerifyUnknown">🟡 验证状态不详 🟡</string>
+    <string name="lblStatusExcluded">从筛选中排除</string>
+    <string name="lblDatabaseServer">数据库服务器覆盖</string>
+    <string name="lblResetCloudflare">Cloudflare镜像</string>
+    <string name="lblNotificationAlertDescription">用于告知用户已筛选来电的状态</string>
+    <string name="lblDisallowedCall">被阻止的来电</string>
+    <string name="lblStatusVerifyFailed">🔴 验证失败 🔴</string>
+    <string name="lblResetPrimary">主服务器</string>
+    <string name="main_database_override">使用服务器 %s</string>
+    <string name="lblDeleteDatabase">删除数据库</string>
+    <string name="lblOverride">覆盖</string>
+    <string name="lblStatusMatchedDatabase">🔴 号码与数据库匹配 🔴</string>
+    <string name="lblDownloadDatabaseFull">下载所有被报告的号码</string>
+    <string name="app_name">Carrion</string>
+</resources>
