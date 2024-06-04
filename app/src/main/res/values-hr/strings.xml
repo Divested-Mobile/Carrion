@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Carrion</string>
+    <string name="lblSilencedCall">Utišani poziv</string>
+    <string name="lblDisallowedCall">Nedopušten poziv</string>
+    <string name="lblStatusVerifySuccess">🟢 Provjera uspjela 🟢</string>
+    <string name="lblDeleteDatabase">Izbriši bazu podataka</string>
+    <string name="lblStatusMatchedDatabase">🔴 Broj u bazi podataka 🔴</string>
+    <string name="lblDownloadDatabaseFull">Preuzmite sve prijavljene brojeve</string>
+    <string name="lblDownloadDatabaseHighConf">Preuzmite brojeve visoke pouzdanosti</string>
+    <string name="lblResetPrimary">Primarni poslužitelji</string>
+    <string name="lblResetCloudflare">Cloudflare Mirror</string>
+    <string name="main_database_override">Korištenje poslužitelja %s</string>
+    <string name="lblSilenceUnknownToggle"></string>
+    <string name="lblAllowedCall">Dopušten poziv</string>
+    <string name="lblStatusVerifyFailed">🔴 Provjera nije uspjela 🔴</string>
+</resources>
