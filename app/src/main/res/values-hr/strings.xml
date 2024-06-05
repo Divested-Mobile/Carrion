@@ -11,7 +11,6 @@
     <string name="lblResetPrimary">Primarni poslužitelji</string>
     <string name="lblResetCloudflare">Cloudflare Mirror</string>
     <string name="main_database_override">Korištenje poslužitelja %s</string>
-    <string name="lblSilenceUnknownToggle"></string>
     <string name="lblAllowedCall">Dopušten poziv</string>
     <string name="lblStatusVerifyFailed">🔴 Provjera nije uspjela 🔴</string>
 </resources>
