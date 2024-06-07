@@ -13,4 +13,8 @@
     <string name="main_database_override">Korištenje poslužitelja %s</string>
     <string name="lblAllowedCall">Dopušten poziv</string>
     <string name="lblStatusVerifyFailed">🔴 Provjera nije uspjela 🔴</string>
+    <string name="lblNotificationAlertTitle">Upozorenja o filtriranju poziva</string>
+    <string name="lblNotificationAlertDescription">Koristi se za obavještavanje korisnika o statusu filtriranih poziva</string>
+    <string name="lblStatusVerifyUnknown">🟡Nepoznata verifikacija 🟡</string>
+    <string name="lblStatusExcluded">Isključeno iz filtera poziva</string>
 </resources>
