@@ -19,4 +19,6 @@
     <string name="lblDownloadDatabaseFull">下载所有被报告的号码</string>
     <string name="app_name">Carrion</string>
     <string name="lblDownloadDatabaseHighConf">下载高置信度的号码</string>
+    <string name="lblSilenceUnknownToggle">当验证未签名时静音呼叫</string>
+    <string name="lblBlockUnknownToggle">当验证未签名时阻止呼叫</string>
 </resources>
