@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="lblStatusVerifyFailed">🔴 Tuvastamine ei õnnestunud 🔴</string>
+    <string name="lblStatusVerifySuccess">🟢 Tuvastamine õnnestus 🟢</string>
+    <string name="lblStatusVerifyUnknown">🟡 Tuvastamise olek on teadmata 🟡</string>
+    <string name="lblStatusExcluded">Ei kuulu kontrollimisele</string>
+    <string name="lblDeleteDatabase">Kustuta andmebaas</string>
+    <string name="lblStatusMatchedDatabase">🔴 Number on andmebaasis 🔴</string>
+    <string name="main_database_override">Kasutame serverit %s</string>
+    <string name="lblResetCloudflare">Cloudflare peegelserver</string>
+    <string name="lblDisallowedCall">Keelatud kõne</string>
+    <string name="lblSilencedCall">Vaigistatud kõne</string>
+    <string name="app_name">Carrion</string>
+    <string name="lblAllowedCall">Kubatud kõne</string>
+    <string name="lblNotificationAlertTitle">Kõnede taustakontrolli teated</string>
+    <string name="lblNotificationAlertDescription">Teavitus kõnede taustakontrolli kohta</string>
+    <string name="lblDownloadDatabaseFull">Laadi alla kõik numbrid, millest on teada antud</string>
+    <string name="lblResetPrimary">Põhiserverid</string>
+</resources>
