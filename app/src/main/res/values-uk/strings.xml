@@ -19,4 +19,6 @@
     <string name="app_name">Carrion</string>
     <string name="lblNotificationAlertTitle">Повідомлення про перевірку дзвінків</string>
     <string name="lblNotificationAlertDescription">Використовується для інформування користувача про стан відфільтрованих дзвінків</string>
+    <string name="lblSilenceUnknownToggle">Перевірка затишення без підпису</string>
+    <string name="lblBlockUnknownToggle">Перевірка блокування без підпису</string>
 </resources>
