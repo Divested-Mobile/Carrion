@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Carrion</string>
     <string name="lblNotificationAlertTitle">Alertas de análise das chamadas</string>
@@ -15,4 +16,9 @@
     <string name="lblDownloadDatabaseHighConf">Baixar números com alta confiança de serem maliciosos</string>
     <string name="lblSilenceUnknownToggle">Silenciar a chamada quando a verificação não é assinada</string>
     <string name="lblBlockUnknownToggle">Bloquear a chamada quando a verificação não é assinada</string>
+    <string name="lblDatabaseServer">Alterar o servidor do banco de dados</string>
+    <string name="lblOverride">Alterar</string>
+    <string name="main_database_override">A usar o servidor %s</string>
+    <string name="lblResetPrimary">Servidores Primários</string>
+    <string name="lblResetCloudflare">Espelho Cloudflare</string>
 </resources>
