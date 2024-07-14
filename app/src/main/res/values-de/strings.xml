@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="lblNotificationAlertDescription">Wird verwendet um dem Nutzer über den Status der Anrufer-Screening\'s zu informieren</string>
+    <string name="lblSilencedCall">Stummgeschalteter Anruf</string>
+    <string name="lblDisallowedCall">Abgelehnter Anruf</string>
+    <string name="lblAllowedCall">Genehmigter Anruf</string>
+    <string name="lblStatusVerifyFailed">🔴 Verifizierung fehlgeschlagen 🔴</string>
+    <string name="lblStatusVerifySuccess">🟢 Verifizierung erfolgreich 🟢</string>
+    <string name="lblNotificationAlertTitle">Anrufer-Screening Benachrichtigungen</string>
+    <string name="app_name">Carrion</string>
+    <string name="lblDownloadDatabaseFull">Alle gemeldeten Rufnummern herunterladen</string>
+    <string name="lblDownloadDatabaseHighConf">Als \"Sehr wahrscheinlich\" eingestufte Rufnummern runterladen</string>
+    <string name="lblSilenceUnknownToggle">Stummschaltungs verifizierung unsegniert</string>
+    <string name="lblBlockUnknownToggle">Geblockte Verifizerung unsegniert</string>
+    <string name="lblOverride">Überschreiben</string>
+    <string name="lblDeleteDatabase">Datenbank entfernen</string>
+    <string name="lblResetCloudflare">Cloudflare Mirror/Spiegel</string>
+    <string name="lblResetPrimary">Primärer Server</string>
+    <string name="main_database_override">Via Server %s</string>
+    <string name="lblStatusVerifyUnknown">🟡 Verifizierung unbekannt 🟡</string>
+    <string name="lblStatusExcluded">Vom Anruf-Screening ausgeschlossen</string>
+    <string name="lblStatusMatchedDatabase">🔴 Rufnummer in der Datenbank 🔴</string>
+    <string name="lblDatabaseServer">Datenbankserver überschreiben</string>
+</resources>
