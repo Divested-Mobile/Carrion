@@ -73,9 +73,21 @@ Known Issues
 
 Credits
 -------
-- @lucasmz for Portuguese translations.
-- @vzamanillo for Spanish translations.
 - Icons: Google/Android/AOSP, License: Apache 2.0, https://google.github.io/material-design-icons/
+
+Translations
+------------
+- Chinese (Simplified): Crit
+- Croatian: lukapiplica
+- Estonian: Priit Jõerüüt
+- Galician: josé m
+- German: thereisnoanderson
+- Indonesian: Adrien N
+- Norwegian Bokmål: Even Bull-Tornøe
+- Portuguese (Brazil): lucasmz-dev
+- Portuguese: ssantos
+- Spanish: vzamanillo, gallegonovato
+- Ukrainian: Fqwe1
 
 Donate
 -------

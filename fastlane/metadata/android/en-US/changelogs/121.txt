@@ -1,0 +1,12 @@
+Translation updates thanks to the following contributors:
+- Chinese (Simplified): Crit
+- Croatian: lukapiplica
+- Estonian: Priit Jõerüüt
+- Galician: josé m
+- German: thereisnoanderson
+- Indonesian: Adrien N
+- Norwegian Bokmål: Even Bull-Tornøe
+- Portuguese (Brazil): lucasmz-dev
+- Portuguese: ssantos
+- Spanish: gallegonovato
+- Ukrainian: Fqwe1
