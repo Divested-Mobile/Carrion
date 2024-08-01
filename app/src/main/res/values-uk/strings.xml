@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="lblSilencedCall">Тихий дзвінок</string>
-    <string name="lblDisallowedCall">Заблокований дзвінок</string>
-    <string name="lblAllowedCall">Дозволений дзвінок</string>
+    <string name="lblSilencedCall">Дзвінок заглушено</string>
+    <string name="lblDisallowedCall">Дзвінок заблоковано</string>
+    <string name="lblAllowedCall">Дзвінок дозволено</string>
     <string name="lblStatusVerifyFailed">🔴 Не вдалося перевірити 🔴</string>
     <string name="lblStatusVerifySuccess">🟢 Перевірка пройшла успішно 🟢</string>
-    <string name="lblStatusVerifyUnknown">🟡 Статус перевірки невідомий 🟡</string>
+    <string name="lblStatusVerifyUnknown">🟡 Стан перевірки невідомий 🟡</string>
     <string name="lblStatusExcluded">Виключено з перевірки</string>
     <string name="lblDeleteDatabase">Видалити базу даних</string>
     <string name="lblStatusMatchedDatabase">🔴 Номер у базі даних 🔴</string>
@@ -19,6 +19,6 @@
     <string name="app_name">Carrion</string>
     <string name="lblNotificationAlertTitle">Повідомлення про перевірку дзвінків</string>
     <string name="lblNotificationAlertDescription">Використовується для інформування користувача про стан відфільтрованих дзвінків</string>
-    <string name="lblSilenceUnknownToggle">Перевірка затишення без підпису</string>
+    <string name="lblSilenceUnknownToggle">Перевірка заглушення без підпису</string>
     <string name="lblBlockUnknownToggle">Перевірка блокування без підпису</string>
 </resources>
