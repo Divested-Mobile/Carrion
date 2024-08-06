@@ -11,9 +11,14 @@
     <string name="lblDisallowedCall">Keelatud kõne</string>
     <string name="lblSilencedCall">Vaigistatud kõne</string>
     <string name="app_name">Carrion</string>
-    <string name="lblAllowedCall">Kubatud kõne</string>
+    <string name="lblAllowedCall">Lubatud kõne</string>
     <string name="lblNotificationAlertTitle">Kõnede taustakontrolli teated</string>
     <string name="lblNotificationAlertDescription">Teavitus kõnede taustakontrolli kohta</string>
     <string name="lblDownloadDatabaseFull">Laadi alla kõik numbrid, millest on teada antud</string>
     <string name="lblResetPrimary">Põhiserverid</string>
+    <string name="lblDownloadDatabaseHighConf">Laadi alla suure tõenäosusega numbrite andmekogu</string>
+    <string name="lblSilenceUnknownToggle">Vaikuse verifitseerimine on allkirjastamata</string>
+    <string name="lblBlockUnknownToggle">Blokeerimise verifitseerimine on allkirjastamata</string>
+    <string name="lblDatabaseServer">Kasuta muud andmekogu</string>
+    <string name="lblOverride">Asenda server</string>
 </resources>
