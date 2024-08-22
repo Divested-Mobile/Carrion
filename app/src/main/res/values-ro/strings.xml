@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Carrion</string>
+    <string name="lblAllowedCall">Apel permis</string>
+    <string name="lblStatusVerifySuccess">🟢 Verificarea a avut succes 🟢</string>
+    <string name="lblDeleteDatabase">Șterge baza de date</string>
+    <string name="lblDownloadDatabaseFull">Descarcă toate numerele raportate</string>
+    <string name="lblStatusVerifyUnknown">🟡 Verificare necunoscută 🟡</string>
+    <string name="lblResetPrimary">Serverele principale</string>
+    <string name="lblResetCloudflare">Server Cloudflare</string>
+    <string name="main_database_override">Se utilizează serverul %s</string>
+    <string name="lblOverride">Suprascriere</string>
+    <string name="lblStatusVerifyFailed">🔴 Verificarea a eșuat 🔴</string>
+    <string name="lblStatusMatchedDatabase">🔴 Număr in baza de date 🔴</string>
+    <string name="lblDownloadDatabaseHighConf">Descarcă numerele de înaltă confidențialitate</string>
+</resources>
