@@ -51,7 +51,7 @@ Notes
 - The robocaller database is entirely optional, STIR/SHAKEN verification is completely independent
 - Internet is only optionally used to download the robocaller database
   - Caller information, stats, and other information is never sent anywhere
-- The stats feature is entirely local for to user observe effectiveness and is never sent anywhere
+- The stats feature is entirely local for the user to observe effectiveness and is never sent anywhere
 - The archive database is included in both high and full database and cannot be used on its own
 - If you want to switch between databases and you just recently updated you must first delete the database
   - This is because the app doesn't know which is actually saved and both databases likely have the same generation timestamp
