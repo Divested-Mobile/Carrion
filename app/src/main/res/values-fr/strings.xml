@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="lblNotificationAlertTitle">Alertes au filtrage des appels</string>
+    <string name="lblSilenceUnknownToggle">Mettre en sourdine les vérifications sans signature</string>
+    <string name="lblBlockUnknownToggle">Bloquer les vérifications sans signature</string>
+    <string name="lblDatabaseServer">Remplacer le serveur de base de données</string>
+    <string name="lblOverride">Remplacer</string>
+    <string name="lblResetPrimary">Serveurs primaires</string>
+    <string name="lblResetCloudflare">Miroir Cloudflare</string>
+    <string name="main_database_override">Utilisation du serveur %s</string>
+    <string name="app_name">Carrion</string>
+    <string name="lblNotificationAlertDescription">Utilisée pour informer l\'utilisateur du statut des appels filtrés</string>
+    <string name="lblStatusVerifyFailed">🔴 Verification échouée 🔴</string>
+    <string name="lblSilencedCall">Appel mis en sourdine</string>
+    <string name="lblStatusVerifySuccess">🟢 Verification réussie 🟢</string>
+    <string name="lblDisallowedCall">Appel refusé</string>
+    <string name="lblStatusVerifyUnknown">🟡 Verification inconnue 🟡</string>
+    <string name="lblStatusExcluded">Exclus du filtrage</string>
+    <string name="lblDeleteDatabase">Supprimer la base de données</string>
+    <string name="lblAllowedCall">Appel accepté</string>
+    <string name="lblStatusMatchedDatabase">🔴 Numéro dans la BDD 🔴</string>
+    <string name="lblDownloadDatabaseFull">Télécharger tous les numéros signalés</string>
+    <string name="lblDownloadDatabaseHighConf">Télécharger les numéros de haute confiance</string>
+</resources>
