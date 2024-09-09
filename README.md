@@ -82,10 +82,12 @@ Translations
 - Estonian: Priit Jõerüüt
 - Galician: josé m
 - German: thereisnoanderson
+- French: cwpute
 - Indonesian: Adrien N
 - Norwegian Bokmål: Even Bull-Tornøe
 - Portuguese (Brazil): lucasmz-dev
 - Portuguese: ssantos
+- Romanian: Renko
 - Spanish: vzamanillo, gallegonovato
 - Ukrainian: Fqwe1
 

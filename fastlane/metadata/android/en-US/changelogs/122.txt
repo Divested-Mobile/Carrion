@@ -1,0 +1,7 @@
+Additional safety checks for database
+
+Translation updates thanks to the following contributors:
+- Estonian: Priit Jõerüüt
+- French: cwpute
+- Romanian: Renko
+- Ukrainian: Fqwe1
