@@ -150,7 +150,10 @@ public class ScreeningService extends CallScreeningService {
                     BufferedReader reader = new BufferedReader(new InputStreamReader(new GZIPInputStream(Files.newInputStream(database.toPath()))));
                     String line = "";
                     while ((line = reader.readLine()) != null) {
-                        databaseNumbers.add(line.trim());
+                        line = line.trim();
+                        if (line.length() == 10 && line.chars().allMatch(Character::isDigit)) {
+                            databaseNumbers.add(line);
+                        }
                     }
                     reader.close();
                     Log.d("Carrion", "Loaded database with " + databaseNumbers.size() + " entries in " + (System.currentTimeMillis() - startTime) + "ms");

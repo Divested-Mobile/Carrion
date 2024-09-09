@@ -186,8 +186,12 @@ public class MainActivity extends Activity {
                             fileOutputStream.write(data, 0, count);
                         }
                         fileOutputStream.close();
-                        outNew.renameTo(out); //Move the new file into place
-                        logView.append("Database download successful.\n");
+                        if (outNew.length() > 0 && outNew.length() <= (1000 * 1000 * 2)) {
+                            outNew.renameTo(out); //Move the new file into place
+                            logView.append("Database download successful.\n");
+                        } else {
+                            logView.append("Database download completed, but with invalid size\n");
+                        }
                     } else {
                         logView.append("Database download failed.\n");
                     }
