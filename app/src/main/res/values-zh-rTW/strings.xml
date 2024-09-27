@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="lblNotificationAlertTitle">來電篩選提醒</string>
+    <string name="lblNotificationAlertDescription">用於告知使用者已篩選來電的狀態</string>
+    <string name="lblSilencedCall">已靜音的來電</string>
+    <string name="lblDisallowedCall">被阻止的來電</string>
+    <string name="lblAllowedCall">允許的來電</string>
+    <string name="lblStatusVerifyFailed">🔴 驗證失敗 🔴</string>
+    <string name="lblStatusVerifySuccess">🟢 驗證成功 🟢</string>
+    <string name="lblStatusVerifyUnknown">🟡 驗證狀態不明 🟡</string>
+    <string name="lblStatusExcluded">從篩選中排除</string>
+    <string name="lblDeleteDatabase">刪除資料庫</string>
+    <string name="lblStatusMatchedDatabase">🔴 資料庫中的號碼 🔴</string>
+    <string name="lblDownloadDatabaseHighConf">下載高可信度的號碼</string>
+    <string name="lblDownloadDatabaseFull">下載所有被檢舉的號碼</string>
+    <string name="lblDatabaseServer">資料庫伺服器複寫</string>
+    <string name="lblOverride">複寫</string>
+    <string name="lblResetPrimary">主要伺服器</string>
+    <string name="lblResetCloudflare">Cloudflare 鏡像</string>
+    <string name="main_database_override">使用伺服器 %s</string>
+</resources>
