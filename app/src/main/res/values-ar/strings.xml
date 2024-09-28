@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="lblNotificationAlertTitle">تنبيهات فحص المكالمات</string>
+    <string name="lblSilencedCall">مكالمة مكتومة</string>
+    <string name="lblDisallowedCall">مكالمة غير مسموح بها</string>
+    <string name="lblAllowedCall">مكالمة مسموح بها</string>
+    <string name="lblStatusVerifyFailed">🔴 فشل التحقق 🔴</string>
+    <string name="lblStatusVerifySuccess">🟢 نجح التحقق 🟢</string>
+    <string name="lblStatusVerifyUnknown">🟡 التحقق غير معروف 🟡</string>
+    <string name="lblDeleteDatabase">حذف قاعدة البيانات</string>
+    <string name="lblStatusMatchedDatabase">🔴 الرقم في قاعدة البيانات 🔴</string>
+    <string name="lblDownloadDatabaseHighConf">تحميل أرقام ذات ثقة عالية</string>
+    <string name="lblSilenceUnknownToggle">التحقق من الصمت غير موقّع</string>
+    <string name="lblBlockUnknownToggle">التحقق من الكتلة غير موقّع</string>
+    <string name="lblOverride">تجاوز</string>
+    <string name="lblResetPrimary">الخوادم الرئيسية</string>
+    <string name="lblResetCloudflare">مرآة كلاودفلير</string>
+    <string name="main_database_override">استخدام الخادم %s</string>
+    <string name="app_name">كاريون</string>
+    <string name="lblNotificationAlertDescription">يُستخدم لإعلام المستخدم بحالة المكالمات التي تم فحصها</string>
+    <string name="lblStatusExcluded">مستبعد من الفحص</string>
+    <string name="lblDownloadDatabaseFull">تنزيل جميع الأرقام المبلغ عنها</string>
+    <string name="lblDatabaseServer">تجاوز خادم قاعدة البيانات</string>
+</resources>
