@@ -13,9 +13,9 @@
     <string name="lblSilenceUnknownToggle">التحقق من الصمت غير موقّع</string>
     <string name="lblBlockUnknownToggle">التحقق من الكتلة غير موقّع</string>
     <string name="lblOverride">تجاوز</string>
-    <string name="lblResetPrimary">الخوادم الرئيسية</string>
-    <string name="lblResetCloudflare">مرآة كلاودفلير</string>
-    <string name="main_database_override">استخدام الخادم %s</string>
+    <string name="lblResetPrimary">الخوادم الأساسية</string>
+    <string name="lblResetCloudflare">مرآة Cloudflare</string>
+    <string name="main_database_override">استخدام خادم %s</string>
     <string name="app_name">كاريون</string>
     <string name="lblNotificationAlertDescription">يُستخدم لإعلام المستخدم بحالة المكالمات التي تم فحصها</string>
     <string name="lblStatusExcluded">مستبعد من الفحص</string>
