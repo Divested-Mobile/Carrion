@@ -1,0 +1,7 @@
+Translation updates thanks to the following contributors:
+- Arabic: abdelbasset jabrane, jonnysemon
+- Chinese (Traditional Han script): 張可揚
+- Czech: Fjuro
+- German: FW
+- Italian: Dark Space
+- Persian: Alireza Rashidi

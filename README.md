@@ -77,14 +77,19 @@ Credits
 
 Translations
 ------------
+- Arabic: abdelbasset jabrane, jonnysemon
 - Chinese (Simplified): Crit
+- Chinese (Traditional Han script): 張可揚
 - Croatian: lukapiplica
+- Czech: Fjuro
 - Estonian: Priit Jõerüüt
-- Galician: josé m
-- German: thereisnoanderson
 - French: cwpute
+- Galician: josé m
+- German: thereisnoanderson, FW
 - Indonesian: Adrien N
+- Italian: Dark Space
 - Norwegian Bokmål: Even Bull-Tornøe
+- Persian: Alireza Rashidi
 - Portuguese (Brazil): lucasmz-dev
 - Portuguese: ssantos
 - Romanian: Renko
