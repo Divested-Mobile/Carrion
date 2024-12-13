@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Carrion</string>
+    <string name="lblAllowedCall">Разрешенный вызов</string>
+    <string name="lblNotificationAlertTitle">Предупреждения о проверке вызовов</string>
+    <string name="lblBlockUnknownToggle">Проверка блока без знака</string>
+    <string name="lblDeleteDatabase">Удалить базу данных</string>
+    <string name="lblStatusVerifyFailed">🔴 Проверка провалилась 🔴</string>
+    <string name="lblSilencedCall">Беззвучный звонок</string>
+    <string name="lblDisallowedCall">Запрещенный вызов</string>
+    <string name="lblDownloadDatabaseFull">Скачать все отчетные номера</string>
+    <string name="lblSilenceUnknownToggle">Проверка подлинности молчания без знака</string>
+    <string name="lblOverride">Переопределение</string>
+    <string name="lblResetPrimary">Основные серверы</string>
+    <string name="lblResetCloudflare">Зеркало Cloudflare</string>
+    <string name="main_database_override">Использование сервера %s</string>
+    <string name="lblStatusExcluded">Исключены из скрининга</string>
+    <string name="lblStatusMatchedDatabase">🔴 Номер в базе данных 🔴</string>
+    <string name="lblStatusVerifySuccess">🟢 Проверка прошла успешно 🟢</string>
+    <string name="lblStatusVerifyUnknown">🟡 Проверка неизвестна 🟡</string>
+    <string name="lblDownloadDatabaseHighConf">Загрузите номера с высокой степенью достоверности</string>
+    <string name="lblDatabaseServer">Переопределение сервера базы данных</string>
+    <string name="lblNotificationAlertDescription">Используется для информирования пользователя о состоянии экранированных вызовов</string>
+</resources>
