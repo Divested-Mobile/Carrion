@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">கேரியன்</string>
+    <string name="lblDatabaseServer">தரவுத்தள சேவையகம் மேலெழுதும்</string>
+    <string name="lblOverride">மேலெழுதவும்</string>
+    <string name="lblNotificationAlertTitle">ச்கிரீனிங் விழிப்பூட்டல்களை அழைக்கவும்</string>
+    <string name="lblNotificationAlertDescription">திரையிடப்பட்ட அழைப்புகளின் நிலையை பயனருக்கு தெரிவிக்க பயன்படுகிறது</string>
+    <string name="lblSilencedCall">அமைதியான அழைப்பு</string>
+    <string name="lblDisallowedCall">அனுமதிக்கப்படாத அழைப்பு</string>
+    <string name="lblAllowedCall">அனுமதிக்கப்பட்ட அழைப்பு</string>
+    <string name="lblStatusVerifyFailed">🔴 சரிபார்ப்பு தோல்வியுற்றது</string>
+    <string name="lblStatusVerifySuccess">🟢 சரிபார்ப்பு செய் பெற்றது</string>
+    <string name="lblStatusVerifyUnknown">🟡 சரிபார்ப்பு தெரியாதது</string>
+    <string name="lblStatusExcluded">திரையிடலில் இருந்து விலக்கப்பட்டுள்ளது</string>
+    <string name="lblDeleteDatabase">தரவுத்தளத்தை நீக்கு</string>
+    <string name="lblStatusMatchedDatabase">தரவுத்தளத்தில் எண்</string>
+    <string name="lblDownloadDatabaseFull">அறிக்கையிடப்பட்ட அனைத்து எண்களையும் பதிவிறக்கவும்</string>
+    <string name="lblDownloadDatabaseHighConf">அதிக நம்பிக்கை எண்களைப் பதிவிறக்கவும்</string>
+    <string name="lblSilenceUnknownToggle">ம silence ன சரிபார்ப்பு கையொப்பமிடப்படவில்லை</string>
+    <string name="lblBlockUnknownToggle">தொகுதி சரிபார்ப்பு கையொப்பமிடப்படவில்லை</string>
+    <string name="lblResetPrimary">முதன்மை சேவையகங்கள்</string>
+    <string name="lblResetCloudflare">கிளவுட்ஃப்ளேர் கண்ணாடி</string>
+    <string name="main_database_override">சேவையகத்தைப் பயன்படுத்துதல் %s</string>
+</resources>
